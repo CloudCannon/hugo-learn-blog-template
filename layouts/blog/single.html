@@ -6,7 +6,15 @@
                 <div class="b-hero__author-date">
                     <span>Written by: {{ .Params.author }}</span>
                     <span>{{ .Date.Format "January 2, 2006" }}</span>
-                    <!-- Tag navigation can be added later -->
+                    <div class="tag-group">
+                        {{ range .Params.tags }}
+                        <div class="tag">
+                            <span class="tag-text">
+                            <a href="/tags/{{. | urlize }}">{{.}}</a>
+                        </span>
+                    </div>
+                        {{end}}
+                    </div>
                 </div>
             </div>
         </div>
