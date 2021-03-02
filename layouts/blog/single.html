@@ -1,0 +1,14 @@
+{{ define "main" }}
+        <div class="b-hero">
+            <img class="b-hero__image" src="{{ .Params.image }}">
+            <div class="b-hero__info">
+                <h1 class="b-hero__title">{{ .Title }}</h1>
+                <div class="b-hero__author-date">
+                    <span>Written by: {{ .Params.author }}</span>
+                    <span>{{ .Date.Format "January 2, 2006" }}</span>
+                    <!-- Tag navigation can be added later -->
+                </div>
+            </div>
+        </div>
+        {{ .Content }}
+{{ end }}
