@@ -1,0 +1,6 @@
+baseURL = ""
+languageCode = "en-us"
+title = "CawCannon"
+
+[params]
+  author = "CloudCannon"
