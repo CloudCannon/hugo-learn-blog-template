@@ -232,21 +232,6 @@ a:hover {
   }
 }
 
-// Includes styling:
-
-.includes-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-top: 20px;
-
-  iframe {
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-
-}
-
 // Homepage and blog list styles
 
 .b-hero {
@@ -515,22 +500,6 @@ a:hover {
     }
   }
 
-  .includes-grid {
-    flex-direction: row;
-
-    & > iframe {
-      margin-right: 10px;
-    }
-  }
-
-  .spacing {
-    margin-right: 10px;
-  
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
   .post-row {
     display: flex;
     flex-wrap: wrap;
@@ -632,10 +601,6 @@ a:hover {
     &__right-group {
       width: 40%;
     }
-  }
-
-  .includes-grid {
-    flex-direction: row;
   }
     
 }
