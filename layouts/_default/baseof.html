@@ -1,70 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ if isset .Params "title" }}
-    <title>{{ .Site.Title }} | {{ .Title }}</title>
-    {{ else }}
-    <title>{{ .Title }}</title>
-    {{ end }}
-    <meta property="og:title" content="{{ .Site.Title }}" />
+  {{ partial "head-meta.html" . }}
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="page">
-    <header>
-        <nav>
-          <ul class="top-nav">
-            <li class="top-nav__logo"><a href="/">{{ .Site.Title }}</a></li>
-            <div class="top-nav__link-group">
-              <li class="top-nav__link"><a href="/">Home</a></li>
-              <li class="top-nav__link"><a href="/blog">Blog</a></li>
-              <li class="top-nav__link"><a href="/gallery">Gallery</a></li>
-              <li class="top-nav__link"><a href="/locations">Locations</a>
-              <li class="top-nav__link"><a href="/about">About</a>
-              <li class="top-nav__link"><a href="#">
-                  <img class="icons" src="/search-icon.svg">
-                </a>
-              </li>
-            </div>
-          </ul>
-        </nav>
-      </header>
-    <main class="main-content">
+  {{ partial "nav.html" . }}
+  <main class="main-content">
       <div class="container">
         <div class="page-content">
             {{ block "main" . }}{{ end }}
         </div>
     </div>
   </main>
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-content__left-group">
-          <h2 class="footer-content__site-name">{{ .Site.Title }}</h2>
-          <p>Learn Hugo with CloudCannon, {{ now.Format "2006" }}</p>
-        </div>
-        <div class="footer-content__right-group">
-          <div class="newsletter-form">
-            <h2 class="newsletter-form__form-title">Sign up for our newsletter</h2>
-            <div class="input-wrapper">
-              <input type="text" placeholder="Enter your email">
-              <a>
-                <img class="submit-arrow" src="/arrow-white.svg">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-social">
-        <a href="#" class="icons"><img src="/facebook-icon.svg"></a>
-        <a href="#" class="icons"><img src="/linkedin-icon.svg"></a>
-        <a href="#" class="icons"><img src="/twitter-icon.svg"></a>
-        <a href="#" class="icons"><img src="/youtube-icon.svg"></a>
-      </div>
-    </div>
-  </footer>
+  {{ partial "footer.html" (dict "title" .Site.Title "year" (now.Format "2006")) }}
 </body>
 </html>

@@ -1,0 +1,8 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ if isset .Params "title" }}
+<title>{{ .Site.Title }} | {{ .Title }}</title>
+{{ else }}
+<title>{{ .Title }}</title>
+{{ end }}
+<meta property="og:title" content="{{ .Site.Title }}" />
