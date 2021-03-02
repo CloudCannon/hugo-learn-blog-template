@@ -9,4 +9,16 @@
     <li>It'll save you time and build costs.</li>
     <li>It helps you create lean, well-structured sites.</li>
 </ul>
+<p class="featured">Featured posts</p>
+<h2 class="heading-secondary dark-blue">Latest posts</h2>
+
+<div class="post-row">
+    {{ range (.Site.GetPage "section" "blog").Pages.ByPublishDate.Reverse }}
+      <div class="post-front">
+        <img class="post-front__image" src="{{ .Params.image }}">
+        <a class="preview-title" href="{{ .Permalink }}">{{ .Params.Title }}</a>
+        <!-- Optionally add tag navigation here -->
+      </div>
+    {{ end }}
+</div>
 {{ end }}
