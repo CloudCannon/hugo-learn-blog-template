@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="page">
-  {{ partial "nav.html" . }}
+  {{ partial "nav.html" }}
   <main class="main-content">
       <div class="container">
         <div class="page-content">
@@ -15,6 +15,6 @@
         </div>
     </div>
   </main>
-  {{ partial "footer.html" (dict "title" .Site.Title "year" (now.Format "2006")) }}
+  {{ partial "footer.html" (dict "description" "your favourite bird blog") }}
 </body>
 </html>
