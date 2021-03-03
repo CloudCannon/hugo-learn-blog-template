@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ if isset .Params "title" }}
-    <title>{{ .Site.Title }} | {{ .Title }}</title>
+    <title>{{ .Title }} | {{ site.Title }}</title>
     {{ else }}
-    <title>{{ .Title }}</title>
+    <title>{{ site.Title }}</title>
     {{ end }}
-    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:title" content="{{ site.Title }}" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="page">
     <header>
         <nav>
           <ul class="top-nav">
-            <li class="top-nav__logo"><a href="/">{{ .Site.Title }}</a></li>
+            <li class="top-nav__logo"><a href="/">{{ site.Title }}</a></li>
             <div class="top-nav__link-group">
               <li class="top-nav__link"><a href="/">Home</a></li>
               <li class="top-nav__link"><a href="/blog">Blog</a></li>
@@ -42,7 +42,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-content__left-group">
-          <h2 class="footer-content__site-name">{{ .Site.Title }}</h2>
+          <h2 class="footer-content__site-name">{{ site.Title }}</h2>
           <p>Learn Hugo with CloudCannon, {{ now.Format "2006" }}</p>
         </div>
         <div class="footer-content__right-group">
