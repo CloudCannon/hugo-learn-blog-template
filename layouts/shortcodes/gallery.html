@@ -1,15 +1,13 @@
 <div class="gallery">
-	{{if .Get "figures" }}
-		{{ range $.Page.Params.resources }}
+	{{ range .Page.Params.resources }}
+		{{if $.Get "figures" }}
 			<figure>
 				<img src="{{.src}}" alt="{{.alt}}" />
 				<figcaption>
 					<p>{{.alt}}</p>
 				</figcaption>
 			</figure>
-		{{end}}
-	{{else}}
-		{{ range $.Page.Params.resources }}
+		{{else}}
 			<img src="{{.src}}" alt="{{.alt}}">
 		{{end}}
 	{{end}}
